@@ -26,6 +26,8 @@ class Dekkers {
 
 							while(turn != 1) {
 								//busy-wait
+								Thread.currentThread().yield();
+//								Thread.yeild();
 							} 
 						}
 
@@ -57,6 +59,7 @@ class Dekkers {
 							wantq = 0;
 
 							while(turn != 2) {
+								Thread.currentThread().yield();
 								//Busy-wait
 							}
 						}
