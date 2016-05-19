@@ -14,8 +14,8 @@ public class PowerServiceClient {
 	public static void main(String[] args) {
 		/* Set up the security manager */
 		System.setSecurityManager(new RMISecurityManager() {
-				public void checkConnect(String host, int port) {}
-				public void checkConnect(String host, int port, Object context) {}
+			public void checkConnect(String host, int port) {}
+			public void checkConnect(String host, int port, Object context) {}
 		});
 
 		/* Declare the name */

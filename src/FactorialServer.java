@@ -1,5 +1,12 @@
 import java.rmi.Naming;
 
+import java.rmi.RemoteException;
+import java.rmi.AlreadyBoundException;
+import java.net.MalformedURLException;
+
+/**
+ * Factorial server to handle calls to factorial
+ */
 public class FactorialServer {
 	public static void main(String[] args) {
 		/* Create and instance of the object */
@@ -13,7 +20,11 @@ public class FactorialServer {
 			Naming.bind(name, factorial);
 
 			System.out.println("Server started");
-		} catch(Exception e) {
+		} catch(AlreadyBoundException e) {
+			e.printStackTrace();
+		} catch(MalformedURLException e) {
+			e.printStackTrace();
+		} catch(RemoteException e) {
 			e.printStackTrace();
 		}
 	}
